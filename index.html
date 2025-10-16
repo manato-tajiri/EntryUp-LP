@@ -20,8 +20,43 @@
         <a href="#schedule">導入スケジュール</a>
         <a href="#faq">よくある質問</a>
       </nav>
+      <button
+        class="header-menu-toggle"
+        type="button"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="header-menu-toggle__icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="header-menu-toggle__label">メニュー</span>
+      </button>
       <div class="header-actions">
         <a class="btn btn-primary" href="https://broca.co.jp/EntryUp-Contact" target="_blank" rel="noopener noreferrer">問い合わせ・デモの申し込み</a>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
+      <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title">
+        <div class="mobile-nav__header">
+          <span class="mobile-nav__title" id="mobile-nav-title">メニュー</span>
+          <button class="mobile-nav__close" type="button" data-menu-close aria-label="メニューを閉じる">
+            <span class="mobile-nav__close-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="mobile-nav__links">
+          <a href="#overview">概要</a>
+          <a href="#effects">選ばれる理由</a>
+          <a href="#features">主な機能</a>
+          <a href="#pricing">料金プラン</a>
+          <a href="#schedule">導入スケジュール</a>
+          <a href="#faq">よくある質問</a>
+        </nav>
+        <div class="mobile-nav__footer">
+          <a class="btn btn-primary" href="https://broca.co.jp/EntryUp-Contact" target="_blank" rel="noopener noreferrer">問い合わせ・デモの申し込み</a>
+        </div>
       </div>
     </div>
   </header>
@@ -41,7 +76,10 @@
         </div>
         <div class="hero-visual">
           <figure class="hero-image">
-            <img src="fig/pc-chatbot.svg" alt="EntryUpのチャット画面イメージ" class="illustration">
+            <div class="hero-devices">
+              <img src="fig/pc-chatbot.svg" alt="EntryUpのPCチャット画面イメージ" class="hero-device hero-device--desktop">
+              <img src="fig/mobile-chat1.svg" alt="EntryUpのスマートフォンチャット画面イメージ" class="hero-device hero-device--mobile">
+            </div>
           </figure>
         </div>
       </div>
@@ -89,7 +127,7 @@
           </div>
           <figure class="overview-visual">
             <div class="overview-visual-frame">
-              <img src="fig/pc-chatbot.svg" alt="EntryUpのチャットリクルーティング画面" class="illustration">
+              <img src="fig/pc-admin.svg" alt="EntryUpのチャットリクルーティング画面" class="illustration">
             </div>
           </figure>
         </div>
@@ -167,41 +205,73 @@
     <section class="section section--light" id="pricing">
       <div class="container">
         <span class="section-label">料金プラン</span>
-        <h2>初期費用100万円＋利用状況に応じた従量制プラン</h2>
-        <p class="section-lead">導入支援・AIチューニング込みの初期費用100万円に加え、月額＋成果に連動する3つのプランをご用意しています。</p>
+        <h2>月額固定費+利用状況に応じた従量制プラン</h2>
+        <p class="section-lead">導入支援・AIチューニング込みで月額＋成果に連動する3つのプランをご用意しています。</p>
         <div class="pricing-grid">
           <div class="pricing-card pricing-card--highlight">
             <h3>プラン比較</h3>
-            <table class="pricing-table">
-              <thead>
-                <tr>
-                  <th>プラン</th>
-                  <th>月額費用</th>
-                  <th>従量課金（応募）</th>
-                  <th>従量課金（LINE登録）</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Liteプラン<br><span class="plan-note">〜9応募／月</span></td>
-                  <td>1万円</td>
-                  <td>1万円／件</td>
-                  <td>1,000円／件</td>
-                </tr>
-                <tr>
-                  <td>Standardプラン<br><span class="plan-note">20〜36応募／月</span></td>
-                  <td>5万円</td>
-                  <td>8,000円／件</td>
-                  <td>800円／件</td>
-                </tr>
-                <tr>
-                  <td>Proプラン<br><span class="plan-note">37応募〜／月</span></td>
-                  <td>10万円</td>
-                  <td>5,000円／件</td>
-                  <td>500円／件</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="plan-cards">
+              <article class="plan-card">
+                <header class="plan-card__header">
+                  <h4 class="plan-card__title">Liteプラン</h4>
+                  <span class="plan-card__note">〜9応募／月</span>
+                </header>
+                <dl class="plan-card__details">
+                  <div class="plan-card__item">
+                    <dt>月額費用</dt>
+                    <dd>1万円</dd>
+                  </div>
+                  <div class="plan-card__item">
+                    <dt>従量課金（応募）</dt>
+                    <dd>1万円／件</dd>
+                  </div>
+                  <div class="plan-card__item">
+                    <dt>従量課金（LINE登録）</dt>
+                    <dd>1,000円／件</dd>
+                  </div>
+                </dl>
+              </article>
+              <article class="plan-card">
+                <header class="plan-card__header">
+                  <h4 class="plan-card__title">Standardプラン</h4>
+                  <span class="plan-card__note">20〜36応募／月</span>
+                </header>
+                <dl class="plan-card__details">
+                  <div class="plan-card__item">
+                    <dt>月額費用</dt>
+                    <dd>5万円</dd>
+                  </div>
+                  <div class="plan-card__item">
+                    <dt>従量課金（応募）</dt>
+                    <dd>8,000円／件</dd>
+                  </div>
+                  <div class="plan-card__item">
+                    <dt>従量課金（LINE登録）</dt>
+                    <dd>800円／件</dd>
+                  </div>
+                </dl>
+              </article>
+              <article class="plan-card">
+                <header class="plan-card__header">
+                  <h4 class="plan-card__title">Proプラン</h4>
+                  <span class="plan-card__note">37応募〜／月</span>
+                </header>
+                <dl class="plan-card__details">
+                  <div class="plan-card__item">
+                    <dt>月額費用</dt>
+                    <dd>10万円</dd>
+                  </div>
+                  <div class="plan-card__item">
+                    <dt>従量課金（応募）</dt>
+                    <dd>5,000円／件</dd>
+                  </div>
+                  <div class="plan-card__item">
+                    <dt>従量課金（LINE登録）</dt>
+                    <dd>500円／件</dd>
+                  </div>
+                </dl>
+              </article>
+            </div>
           </div>
           <div class="pricing-card pricing-card--flow">
             <h3>プラン選びのポイント</h3>
@@ -209,21 +279,20 @@
               <div class="flow-step">
                 <span class="flow-label">応募見込みが少ない</span>
                 <span class="flow-arrow">→</span>
-                <strong>プラン1</strong>
+                <strong>Liteプラン</strong>
               </div>
               <div class="flow-step">
                 <span class="flow-label">一定の応募が想定</span>
                 <span class="flow-arrow">→</span>
-                <strong>プラン2</strong>
+                <strong>Standardプラン</strong>
               </div>
               <div class="flow-step">
                 <span class="flow-label">大量の応募を想定</span>
                 <span class="flow-arrow">→</span>
-                <strong>プラン3</strong>
+                <strong>Proプラン</strong>
               </div>
             </div>
             <ul class="plan-notes">
-              <li>初期費用：100万円（導入支援・AIチューニング含む）</li>
               <li>応募数に合わせてプラン変更はいつでも可能</li>
               <li>詳細なお見積りはお問い合わせください</li>
             </ul>
@@ -239,37 +308,39 @@
         <div class="schedule-chart">
           <div class="schedule-head">
             <div class="head-title">EntryUp</div>
-            <div class="head-month">1ヶ月</div>
-            <div class="head-month">2ヶ月</div>
+            <div class="head-axis">
+              <span class="head-month">1ヶ月</span>
+              <span class="head-month">2ヶ月</span>
+            </div>
           </div>
           <div class="schedule-rows">
             <div class="schedule-row">
               <div class="schedule-task">キックオフ</div>
-              <div class="schedule-grid">
+              <div class="schedule-track">
                 <span class="schedule-bar schedule-bar--kickoff"></span>
               </div>
             </div>
             <div class="schedule-row">
               <div class="schedule-task">ヒアリング</div>
-              <div class="schedule-grid">
+              <div class="schedule-track">
                 <span class="schedule-bar schedule-bar--hearing"></span>
               </div>
             </div>
             <div class="schedule-row">
               <div class="schedule-task">ナレッジ作成</div>
-              <div class="schedule-grid">
+              <div class="schedule-track">
                 <span class="schedule-bar schedule-bar--knowledge"></span>
               </div>
             </div>
             <div class="schedule-row">
               <div class="schedule-task">デモ確認</div>
-              <div class="schedule-grid">
+              <div class="schedule-track">
                 <span class="schedule-bar schedule-bar--demo"></span>
               </div>
             </div>
             <div class="schedule-row">
               <div class="schedule-task">採用HP導入</div>
-              <div class="schedule-grid">
+              <div class="schedule-track">
                 <span class="schedule-bar schedule-bar--launch"></span>
               </div>
             </div>
@@ -311,33 +382,149 @@
 
   <script>
     (function () {
+      const toggle = document.querySelector('[data-menu-toggle]');
+      const nav = document.querySelector('[data-mobile-nav]');
+      const closeBtn = document.querySelector('[data-menu-close]');
+      const focusableSelectors = 'a[href], button:not([disabled])';
+      let lastFocusedElement = null;
+
+      if (!toggle || !nav) return;
+
+      const setExpanded = (expanded) => {
+        toggle.setAttribute('aria-expanded', String(expanded));
+        nav.setAttribute('aria-hidden', String(!expanded));
+        document.body.classList.toggle('is-menu-open', expanded);
+      };
+
+      const trapFocus = (event) => {
+        if (!nav.classList.contains('is-open')) return;
+        const focusable = nav.querySelectorAll(focusableSelectors);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.key !== 'Tab') return;
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      };
+
+      const openNav = () => {
+        if (nav.classList.contains('is-open')) return;
+        lastFocusedElement = document.activeElement;
+        nav.classList.add('is-open');
+        setExpanded(true);
+        const firstFocusable = nav.querySelector(focusableSelectors);
+        if (firstFocusable) firstFocusable.focus();
+        document.addEventListener('keydown', handleKeydown);
+        document.addEventListener('keydown', trapFocus, true);
+      };
+
+      const closeNav = () => {
+        if (!nav.classList.contains('is-open')) return;
+        nav.classList.remove('is-open');
+        setExpanded(false);
+        document.removeEventListener('keydown', handleKeydown);
+        document.removeEventListener('keydown', trapFocus, true);
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        } else {
+          toggle.focus();
+        }
+      };
+
+      const handleKeydown = (event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeNav();
+        }
+      };
+
+      toggle.addEventListener('click', () => {
+        if (nav.classList.contains('is-open')) {
+          closeNav();
+        } else {
+          openNav();
+        }
+      });
+
+      nav.addEventListener('click', (event) => {
+        if (event.target === nav) {
+          closeNav();
+        }
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeNav);
+      }
+
+      nav.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener('click', closeNav);
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
       const logoTrack = document.querySelector('[data-company-logos]');
       if (!logoTrack) return;
 
       const logoShell = logoTrack.parentElement;
       const companyLogos = [
-        { src: 'fig/company/company-alpha.svg', alt: 'Alpha社ロゴ' },
-        { src: 'fig/company/company-bravo.svg', alt: 'Bravo社ロゴ' },
-        { src: 'fig/company/company-charlie.svg', alt: 'Charlie社ロゴ' },
-        { src: 'fig/company/company-delta.svg', alt: 'Delta社ロゴ' },
-        { src: 'fig/company/company-echo.svg', alt: 'Echo社ロゴ' },
-        { src: 'fig/company/company-foxtrot.svg', alt: 'Foxtrot社ロゴ' },
-        { src: 'fig/company/company-globe.svg', alt: 'Globe社ロゴ' },
-        { src: 'fig/company/company-hikari.svg', alt: 'Hikari社ロゴ' },
-        { src: 'fig/company/company-inspire.svg', alt: 'Inspire社ロゴ' },
-        { src: 'fig/company/company-juno.svg', alt: 'Juno社ロゴ' },
-        { src: 'fig/company/company-kizuna.svg', alt: 'Kizuna社ロゴ' },
-        { src: 'fig/company/company-lumina.svg', alt: 'Lumina社ロゴ' },
+        { base: 'fig/company/company-alpha', alt: 'Alpha社ロゴ' },
+        { base: 'fig/company/company-bravo', alt: 'Bravo社ロゴ' },
+        { base: 'fig/company/company-charlie', alt: 'Charlie社ロゴ' },
+        { base: 'fig/company/company-delta', alt: 'Delta社ロゴ' },
+        { base: 'fig/company/company-echo', alt: 'Echo社ロゴ' },
+        { base: 'fig/company/company-foxtrot', alt: 'Foxtrot社ロゴ' },
+        { base: 'fig/company/company-globe', alt: 'Globe社ロゴ', formats: ['png', 'svg'] },
+        { base: 'fig/company/company-hikari', alt: 'Hikari社ロゴ', formats: ['png', 'svg'] },
+        { base: 'fig/company/company-inspire', alt: 'Inspire社ロゴ', formats: ['png', 'svg'] },
+        { base: 'fig/company/company-juno', alt: 'Juno社ロゴ', formats: ['png', 'svg'] },
+        { base: 'fig/company/company-kizuna', alt: 'Kizuna社ロゴ' },
+        { base: 'fig/company/company-lumina', alt: 'Lumina社ロゴ' },
       ];
+
+      const defaultLogoFormats = ['svg', 'png', 'webp'];
+
+      const applyLogoSource = (img, logo) => {
+        const candidates = (Array.isArray(logo.formats) && logo.formats.length
+          ? logo.formats
+          : defaultLogoFormats
+        ).map((ext) => `${logo.base}.${ext}`);
+
+        let index = 0;
+        const assignNext = () => {
+          if (index >= candidates.length) {
+            img.removeEventListener('error', assignNext);
+            return;
+          }
+          img.src = candidates[index++];
+        };
+
+        img.addEventListener('error', assignNext);
+        img.addEventListener(
+          'load',
+          () => img.removeEventListener('error', assignNext),
+          { once: true },
+        );
+
+        assignNext();
+      };
 
       const createLogoItem = (logo) => {
         const item = document.createElement('div');
         item.className = 'company-logo-item';
 
         const img = document.createElement('img');
-        img.src = logo.src;
         img.alt = logo.alt;
         img.loading = 'lazy';
+        img.decoding = 'async';
+
+        applyLogoSource(img, logo);
 
         item.appendChild(img);
         return item;
@@ -364,8 +551,9 @@
       const cycleWidth = logoTrack.scrollWidth;
       logoTrack.style.setProperty('--logo-set-width', `${cycleWidth}px`);
 
-      const clones = Array.from(logoTrack.children).map((child) => child.cloneNode(true));
-      clones.forEach((clone) => logoTrack.appendChild(clone));
+      Array.from(logoTrack.children).forEach((child) => {
+        logoTrack.appendChild(child.cloneNode(true));
+      });
 
       const duration = Math.max(18, cycleWidth / 140);
       logoTrack.style.setProperty('--logo-scroll-duration', `${duration}s`);
