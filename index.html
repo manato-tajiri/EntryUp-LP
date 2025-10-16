@@ -9,7 +9,9 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">EntryUp</div>
+      <a class="logo" href="#top" aria-label="EntryUp">
+        <img src="fig/Logo.svg" alt="EntryUpロゴ" class="logo-image">
+      </a>
       <nav class="site-nav">
         <a href="#overview">概要</a>
         <a href="#effects">選ばれる理由</a>
@@ -41,6 +43,19 @@
           <figure class="hero-image">
             <object data="fig/pc-dashboard.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" class="pdf-embed" aria-label="EntryUpのチャットとダッシュボード画面イメージ"></object>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section companies" id="customers">
+      <div class="container companies-inner">
+        <span class="section-label">導入企業</span>
+        <div class="companies-copy">
+          <h2>登録社数 <span class="companies-accent">70,000</span>社以上の企業にご利用いただいています</h2>
+          <p class="companies-lead">多種多様な業界で、採用コミュニケーションの変革を実現しています。</p>
+        </div>
+        <div class="company-logos-shell" aria-label="導入企業ロゴ一覧">
+          <div class="company-logos-track" data-company-logos></div>
         </div>
       </div>
     </section>
@@ -144,10 +159,6 @@
                 <li>ATS連携・CSV出力で既存システムと連動</li>
               </ul>
             </div>
-          </div>
-          <div class="features-footer">
-            <span class="features-badge">ALL INCLUDED</span>
-            <p>EntryUpは対話体験の向上から応募データ活用まで、採用のワンストップ運用を支援します。</p>
           </div>
         </div>
       </div>
@@ -272,7 +283,7 @@
         <span class="section-label">FAQ</span>
         <h2>よくある質問</h2>
         <div class="faq-list">
-          <details class="faq-item" open>
+          <details class="faq-item">
             <summary>Q. EntryUpの導入までに必要な準備や体制はどのようなものですか？</summary>
             <p>A. 弊社が導入に必要なセットアップを一括で支援しますので、特別な体制準備は不要です。ただし、職種ごとの業務説明や想定質問・回答、FAQ候補などの素材をご用意いただけると、AIアバターの精度向上や初期ナレッジ構築がスムーズに進みます。</p>
           </details>
@@ -297,5 +308,68 @@
       <div class="footer-rights">© 2025 B-Roca Inc. All Rights Reserved.</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const logoTrack = document.querySelector('[data-company-logos]');
+      if (!logoTrack) return;
+
+      const logoShell = logoTrack.parentElement;
+      const companyLogos = [
+        { src: 'fig/company/company-alpha.svg', alt: 'Alpha社ロゴ' },
+        { src: 'fig/company/company-bravo.svg', alt: 'Bravo社ロゴ' },
+        { src: 'fig/company/company-charlie.svg', alt: 'Charlie社ロゴ' },
+        { src: 'fig/company/company-delta.svg', alt: 'Delta社ロゴ' },
+        { src: 'fig/company/company-echo.svg', alt: 'Echo社ロゴ' },
+        { src: 'fig/company/company-foxtrot.svg', alt: 'Foxtrot社ロゴ' },
+        { src: 'fig/company/company-globe.svg', alt: 'Globe社ロゴ' },
+        { src: 'fig/company/company-hikari.svg', alt: 'Hikari社ロゴ' },
+        { src: 'fig/company/company-inspire.svg', alt: 'Inspire社ロゴ' },
+        { src: 'fig/company/company-juno.svg', alt: 'Juno社ロゴ' },
+        { src: 'fig/company/company-kizuna.svg', alt: 'Kizuna社ロゴ' },
+        { src: 'fig/company/company-lumina.svg', alt: 'Lumina社ロゴ' },
+      ];
+
+      const createLogoItem = (logo) => {
+        const item = document.createElement('div');
+        item.className = 'company-logo-item';
+
+        const img = document.createElement('img');
+        img.src = logo.src;
+        img.alt = logo.alt;
+        img.loading = 'lazy';
+
+        item.appendChild(img);
+        return item;
+      };
+
+      const fragment = document.createDocumentFragment();
+      companyLogos.forEach((logo) => {
+        fragment.appendChild(createLogoItem(logo));
+      });
+      logoTrack.appendChild(fragment);
+
+      const shellWidth = logoShell ? logoShell.clientWidth : 0;
+      const baseItems = Array.from(logoTrack.children);
+      while (
+        shellWidth &&
+        logoTrack.scrollWidth < shellWidth * 1.5 &&
+        logoTrack.children.length < 60
+      ) {
+        baseItems.forEach((item) => {
+          logoTrack.appendChild(item.cloneNode(true));
+        });
+      }
+
+      const cycleWidth = logoTrack.scrollWidth;
+      logoTrack.style.setProperty('--logo-set-width', `${cycleWidth}px`);
+
+      const clones = Array.from(logoTrack.children).map((child) => child.cloneNode(true));
+      clones.forEach((clone) => logoTrack.appendChild(clone));
+
+      const duration = Math.max(18, cycleWidth / 140);
+      logoTrack.style.setProperty('--logo-scroll-duration', `${duration}s`);
+    })();
+  </script>
 </body>
 </html>
