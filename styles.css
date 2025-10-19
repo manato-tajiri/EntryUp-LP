@@ -778,75 +778,66 @@ body.is-menu-open {
 
 
 /* Pricing */
-.pricing-grid {
-  margin-top: 32px;
+.pricing-section {
+  margin-top: 36px;
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  align-items: stretch;
+  gap: 48px;
 }
 
-.pricing-card {
-  padding: 28px;
-  border-radius: 20px;
-  background-color: #FFFFFF;
-  border: 1px solid #DDE3F7;
-  box-shadow: 0 24px 48px rgba(16, 23, 48, 0.05);
-  display: flex;
-  flex-direction: column;
-}
-
-.pricing-card h3 {
-  margin: 0 0 12px;
-}
-
-.pricing-card ul {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--color-muted);
-  display: grid;
-  gap: 8px;
-}
-
-.pricing-card--highlight {
-  display: grid;
-  gap: 24px;
-  padding: 28px;
-  height: 100%;
-}
-
-.pricing-card--highlight h3 {
+.pricing-plans__title {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
   color: var(--color-dark);
 }
 
-.plan-cards {
+.pricing-plan-grid {
+  margin-top: 24px;
   display: grid;
-  gap: 20px;
+  gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .plan-card {
-  display: grid;
-  gap: 16px;
-  padding: 24px;
-  border: 1px solid rgba(31, 85, 222, 0.14);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
   border-radius: 20px;
-  background: linear-gradient(180deg, rgba(31, 85, 222, 0.05), rgba(255, 255, 255, 0));
-  box-shadow: 0 18px 36px rgba(31, 85, 222, 0.08);
-  height: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #DDE3F7;
+  box-shadow: 0 24px 48px rgba(16, 23, 48, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px rgba(16, 23, 48, 0.1);
+}
+
+.plan-card__badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: rgba(31, 85, 222, 0.16);
+  color: var(--color-primary);
 }
 
 .plan-card__header {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .plan-card__title {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--color-dark);
 }
@@ -856,88 +847,66 @@ body.is-menu-open {
   color: var(--color-muted);
 }
 
-.plan-card__details {
-  margin: 0;
+.plan-card__pricing {
   display: grid;
   gap: 12px;
 }
 
-.plan-card__item {
-  display: grid;
+.plan-card__price {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
-  padding: 12px;
-  border-radius: 12px;
-  background-color: rgba(31, 85, 222, 0.06);
 }
 
-.plan-card__item dt {
-  margin: 0;
+.plan-card__price-label {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
 
-.plan-card__item dd {
-  margin: 0;
+.plan-card__price-value {
+  font-size: clamp(28px, 4vw, 32px);
   font-weight: 700;
-  font-size: 16px;
   color: var(--color-dark);
 }
 
-.plan-note {
-  display: block;
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--color-muted);
-}
-
-.pricing-card--flow {
-  display: grid;
-  gap: 16px;
-  height: 100%;
-}
-
-.plan-flow {
-  display: grid;
-  gap: 12px;
-}
-
-.flow-step {
+.plan-card__charge {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(31, 85, 222, 0.16);
-  background-color: rgba(241, 247, 253, 0.9);
-}
-
-.flow-label {
-  color: var(--color-muted);
-  font-size: 13px;
-}
-
-.flow-arrow {
-  font-size: 18px;
-  color: var(--color-primary);
-}
-
-.plan-notes {
+  align-items: baseline;
   margin: 0;
-  padding-left: 18px;
-  color: var(--color-muted);
+  padding: 12px 16px;
+  border-radius: 14px;
+  background-color: rgba(31, 85, 222, 0.06);
+  font-size: 14px;
+  color: var(--color-dark);
+}
+
+.plan-card__charge strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.plan-card__features {
+  margin: 0;
+  padding-left: 20px;
   display: grid;
   gap: 8px;
-  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.plan-card__actions {
+  margin-top: auto;
+}
+
+.plan-card__actions .btn {
+  width: 100%;
 }
 
 @media (min-width: 960px) {
-  .pricing-grid {
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  }
-
-  .plan-cards {
+  .pricing-plan-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

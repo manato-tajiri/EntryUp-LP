@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <section class="section companies" id="customers">
+    <!-- <section class="section companies" id="customers">
       <div class="container companies-inner">
         <span class="section-label">導入企業</span>
         <div class="companies-copy">
@@ -97,7 +97,7 @@
           <div class="company-logos-track" data-company-logos></div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="section section--light" id="overview">
       <div class="container">
@@ -167,7 +167,7 @@
               <h3>自社専用ダイレクトスカウト</h3>
             </div>
             <ul>
-              <li>チャット履歴の保存ニーズに合わせてLINE追加・メール登録を促進</li>
+              <li>チャット履歴の保存ニーズに合わせてメール登録を促進</li>
               <li>会社認知はあるが応募に至らなかった候補者を継続的にタレントプール化</li>
               <li>自社ならではのダイレクトスカウト媒体として再アプローチが可能</li>
             </ul>
@@ -208,95 +208,81 @@
         <span class="section-label">料金プラン</span>
         <h2>月額固定費+利用状況に応じた従量制プラン</h2>
         <p class="section-lead">導入支援・AIチューニング込みで月額＋成果に連動する3つのプランをご用意しています。</p>
-        <div class="pricing-grid">
-          <div class="pricing-card pricing-card--highlight">
-            <h3>プラン比較</h3>
-            <div class="plan-cards">
+        <div class="pricing-section">
+          <div class="pricing-plans">
+            <h3 class="pricing-plans__title">プラン比較</h3>
+            <div class="pricing-plan-grid">
               <article class="plan-card">
                 <header class="plan-card__header">
                   <h4 class="plan-card__title">Liteプラン</h4>
                   <span class="plan-card__note">〜9応募／月</span>
                 </header>
-                <dl class="plan-card__details">
-                  <div class="plan-card__item">
-                    <dt>月額費用</dt>
-                    <dd>1万円</dd>
+                <div class="plan-card__pricing">
+                  <div class="plan-card__price">
+                    <span class="plan-card__price-label">月額費用</span>
+                    <span class="plan-card__price-value">1万円</span>
                   </div>
-                  <div class="plan-card__item">
-                    <dt>従量課金（応募）</dt>
-                    <dd>1万円／件</dd>
-                  </div>
-                  <div class="plan-card__item">
-                    <dt>従量課金（LINE登録）</dt>
-                    <dd>1,000円／件</dd>
-                  </div>
-                </dl>
+                  <p class="plan-card__charge">
+                    <span>従量課金（応募）</span>
+                    <strong>1万円／件</strong>
+                  </p>
+                </div>
+                <ul class="plan-card__features">
+                  <li>応募見込みが少ないチームに最適</li>
+                  <li>ミニマムな構成で導入・検証をスムーズに開始</li>
+                </ul>
+                <div class="plan-card__actions">
+                  <a class="btn btn-primary" href="https://broca.co.jp/EntryUp-Contact" target="_blank" rel="noopener noreferrer">このプランで相談</a>
+                </div>
               </article>
-              <article class="plan-card">
+              <article class="plan-card plan-card--recommended">
+                <div class="plan-card__badge">おすすめ</div>
                 <header class="plan-card__header">
                   <h4 class="plan-card__title">Standardプラン</h4>
                   <span class="plan-card__note">20〜36応募／月</span>
                 </header>
-                <dl class="plan-card__details">
-                  <div class="plan-card__item">
-                    <dt>月額費用</dt>
-                    <dd>5万円</dd>
+                <div class="plan-card__pricing">
+                  <div class="plan-card__price">
+                    <span class="plan-card__price-label">月額費用</span>
+                    <span class="plan-card__price-value">5万円</span>
                   </div>
-                  <div class="plan-card__item">
-                    <dt>従量課金（応募）</dt>
-                    <dd>8,000円／件</dd>
-                  </div>
-                  <div class="plan-card__item">
-                    <dt>従量課金（LINE登録）</dt>
-                    <dd>800円／件</dd>
-                  </div>
-                </dl>
+                  <p class="plan-card__charge">
+                    <span>従量課金（応募）</span>
+                    <strong>8,000円／件</strong>
+                  </p>
+                </div>
+                <ul class="plan-card__features">
+                  <li>一定数の応募が想定される企業にフィット</li>
+                  <li>AIチューニングと分析で継続的な改善に対応</li>
+                </ul>
+                <div class="plan-card__actions">
+                  <a class="btn btn-primary" href="https://broca.co.jp/EntryUp-Contact" target="_blank" rel="noopener noreferrer">このプランで相談</a>
+                </div>
               </article>
               <article class="plan-card">
                 <header class="plan-card__header">
                   <h4 class="plan-card__title">Proプラン</h4>
                   <span class="plan-card__note">37応募〜／月</span>
                 </header>
-                <dl class="plan-card__details">
-                  <div class="plan-card__item">
-                    <dt>月額費用</dt>
-                    <dd>10万円</dd>
+                <div class="plan-card__pricing">
+                  <div class="plan-card__price">
+                    <span class="plan-card__price-label">月額費用</span>
+                    <span class="plan-card__price-value">10万円</span>
                   </div>
-                  <div class="plan-card__item">
-                    <dt>従量課金（応募）</dt>
-                    <dd>5,000円／件</dd>
-                  </div>
-                  <div class="plan-card__item">
-                    <dt>従量課金（LINE登録）</dt>
-                    <dd>500円／件</dd>
-                  </div>
-                </dl>
+                  <p class="plan-card__charge">
+                    <span>従量課金（応募）</span>
+                    <strong>5,000円／件</strong>
+                  </p>
+                </div>
+                <ul class="plan-card__features">
+                  <li>大量応募が見込まれる採用活動を強力にサポート</li>
+                  <li>複数職種・拠点の同時運用にも柔軟に対応</li>
+                </ul>
+                <div class="plan-card__actions">
+                  <a class="btn btn-primary" href="https://broca.co.jp/EntryUp-Contact" target="_blank" rel="noopener noreferrer">このプランで相談</a>
+                </div>
               </article>
             </div>
-          </div>
-          <div class="pricing-card pricing-card--flow">
-            <h3>プラン選びのポイント</h3>
-            <div class="plan-flow">
-              <div class="flow-step">
-                <span class="flow-label">応募見込みが少ない</span>
-                <span class="flow-arrow">→</span>
-                <strong>Liteプラン</strong>
-              </div>
-              <div class="flow-step">
-                <span class="flow-label">一定の応募が想定</span>
-                <span class="flow-arrow">→</span>
-                <strong>Standardプラン</strong>
-              </div>
-              <div class="flow-step">
-                <span class="flow-label">大量の応募を想定</span>
-                <span class="flow-arrow">→</span>
-                <strong>Proプラン</strong>
-              </div>
-            </div>
-            <ul class="plan-notes">
-              <li>応募数に合わせてプラン変更はいつでも可能</li>
-              <li>詳細なお見積りはお問い合わせください</li>
-            </ul>
           </div>
         </div>
       </div>
