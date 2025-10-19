@@ -3,11 +3,14 @@
   --color-primary: #1F55DE;
   --color-primary-light: #5A86FF;
   --color-on-primary: #FFFFFF;
+  --color-cta: #FF7A21;
+  --color-cta-dark: #FF5C00;
   --color-dark: #202431;
   --color-gray: #C0C0C0;
   --color-muted: #6F7485;
   --color-background: #F1F7FD;
   --shadow-soft: 0 16px 40px rgba(31, 85, 222, 0.12);
+  --shadow-cta: 0 18px 42px rgba(255, 122, 33, 0.26);
 }
 
 *,
@@ -281,21 +284,35 @@ body.is-menu-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 999px;
+  border: none;
+  min-height: 48px;
   font-weight: 600;
-  font-size: 15px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(135deg, var(--color-cta), var(--color-cta-dark));
   color: var(--color-on-primary);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-cta);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
+  box-shadow: 0 24px 52px rgba(255, 122, 33, 0.32);
+}
+
+.btn:focus-visible {
+  outline: 3px solid rgba(255, 122, 33, 0.45);
+  outline-offset: 2px;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 16px 34px rgba(255, 122, 33, 0.28);
 }
 
 /* Hero */
@@ -411,17 +428,6 @@ body.is-menu-open {
   background-color: var(--color-background);
 }
 
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  color: var(--color-muted);
-  text-transform: uppercase;
-}
-
 .section h2 {
   margin: 0 0 20px;
   font-size: clamp(30px, 3.4vw, 42px);
@@ -446,6 +452,177 @@ body.is-menu-open {
   margin: 0 auto 48px;
   max-width: 760px;
   color: var(--color-muted);
+}
+
+/* Pain solution section */
+.pain-solution {
+  position: relative;
+}
+
+.pain-solution__inner {
+  display: grid;
+  gap: 40px;
+}
+
+.pain-solution__head {
+  display: grid;
+  gap: 12px;
+}
+
+.pain-solution__story {
+  display: grid;
+  gap: 28px;
+}
+
+.pain-solution__step {
+  --step-color: var(--color-primary);
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  padding: 32px 32px 32px 48px;
+  border: 1px solid rgba(31, 85, 222, 0.12);
+  box-shadow: 0 18px 48px rgba(31, 85, 222, 0.08);
+  display: grid;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.pain-solution__step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  background: linear-gradient(180deg, var(--step-color), transparent);
+}
+
+.pain-solution__step--approach {
+  --step-color: var(--color-primary-light);
+}
+
+.pain-solution__step-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pain-solution__step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 20px;
+  background-color: rgba(31, 85, 222, 0.08);
+  color: var(--step-color);
+}
+
+.pain-solution__step-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.pain-solution__step-title {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 30px);
+  line-height: 1.4;
+  color: var(--color-dark);
+}
+
+.pain-solution__step-text {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.pain-solution__list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  color: var(--color-muted);
+}
+
+.pain-solution__list li {
+  line-height: 1.7;
+}
+
+.pain-solution__figure {
+  display: grid;
+  gap: 6px;
+  margin: 4px 0 8px;
+}
+
+.pain-solution__figure-value {
+  font-size: clamp(44px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-cta);
+}
+
+.pain-solution__figure-caption {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.pain-solution__comparison {
+  display: grid;
+  gap: 16px;
+  margin: 12px 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pain-solution__comparison-item {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: grid;
+  gap: 8px;
+  border: 1px solid rgba(31, 85, 222, 0.12);
+  box-shadow: 0 18px 42px rgba(31, 85, 222, 0.06);
+}
+
+.pain-solution__comparison-item--after {
+  border-color: rgba(255, 122, 33, 0.24);
+  box-shadow: 0 18px 42px rgba(255, 122, 33, 0.18);
+}
+
+.pain-solution__comparison-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 112px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background-color: rgba(31, 85, 222, 0.12);
+}
+
+.pain-solution__comparison-item--after .pain-solution__comparison-label {
+  color: var(--color-cta);
+  background-color: rgba(255, 122, 33, 0.12);
+  padding: 6px 12px;
+}
+
+.pain-solution__comparison-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.pain-solution__comparison-text {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.6;
 }
 
 .companies {
@@ -1151,6 +1328,18 @@ body.is-menu-open {
     padding: 96px 0 72px;
   }
 
+  .pain-solution__inner {
+    gap: 32px;
+  }
+
+  .pain-solution__step {
+    padding: 28px 28px 28px 42px;
+  }
+
+  .pain-solution__comparison {
+    grid-template-columns: 1fr;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1248,6 +1437,26 @@ body.is-menu-open {
 
   .section {
     padding: 72px 0;
+  }
+
+  .pain-solution__step {
+    padding: 24px 24px 24px 36px;
+    border-radius: 24px;
+  }
+
+  .pain-solution__step-head {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pain-solution__step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+  }
+
+  .pain-solution__comparison {
+    gap: 12px;
   }
 
   .hero-image {
