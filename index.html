@@ -135,7 +135,7 @@
                   <path d="m9 12 2 2 4-4"></path>
                 </svg>
               </span>
-              <h3 class="pain-solution__step-title">EntryUpなら採用コストを約83%削減</h3>
+              <h3 class="pain-solution__step-title" id="cost-chart-heading">EntryUpなら採用コストを約83%削減</h3>
             </div>
             <div class="pain-solution__figure">
               <span class="pain-solution__figure-value">約83%</span>
@@ -147,18 +147,37 @@
             <p class="pain-solution__step-text">
               EntryUpなら応募25件を1件1万円で獲得できる想定で、同じ1名採用が約25万円に収まると試算しています。
             </p>
-            <div class="pain-solution__comparison">
-              <div class="pain-solution__comparison-item pain-solution__comparison-item--before">
-                <span class="pain-solution__comparison-label">人材エージェント</span>
-                <strong class="pain-solution__comparison-value">約150万円 / 1名</strong>
-                <p class="pain-solution__comparison-text">紹介手数料<br>理論年収500万円 × 30% = 150万円</p>
+            <div class="cost-compare" aria-describedby="cost-compare-caption">
+              <article class="cost-compare__card cost-compare__card--before">
+                <header class="cost-compare__head">
+                  <span class="cost-compare__tag">Before</span>
+                  <h4 class="cost-compare__title">人材エージェント</h4>
+                </header>
+                <p class="cost-compare__value">約150万円<span>/ 1名</span></p>
+                <ul class="cost-compare__list">
+                  <li>理論年収500万円 × 紹介手数料30%</li>
+                  <li>1名成約ごとに約150万円の紹介料が発生</li>
+                </ul>
+              </article>
+              <div class="cost-compare__badge" aria-hidden="true">
+                <span class="cost-compare__badge-value">-83%</span>
+                <span class="cost-compare__badge-label">コスト削減</span>
               </div>
-              <div class="pain-solution__comparison-item pain-solution__comparison-item--after">
-                <span class="pain-solution__comparison-label">EntryUp</span>
-                <strong class="pain-solution__comparison-value">25万円 / 1名</strong>
-                <p class="pain-solution__comparison-text">応募25件 × 1万円 = 25万円</p>
-              </div>
+              <article class="cost-compare__card cost-compare__card--after">
+                <header class="cost-compare__head">
+                  <span class="cost-compare__tag cost-compare__tag--after">After</span>
+                  <h4 class="cost-compare__title">EntryUp</h4>
+                </header>
+                <p class="cost-compare__value">25万円<span>/ 1名</span></p>
+                <ul class="cost-compare__list">
+                  <li>応募25件 × 1万円 = 25万円（想定）</li>
+                  <li>AIが候補者を直接ナーチャリングし応募率を向上</li>
+                </ul>
+              </article>
             </div>
+            <p class="cost-compare__caption" id="cost-compare-caption">
+              ※算出は想定モデルに基づく試算値です。実際の効果は募集職種・応募数・運用状況等により変動します。
+            </p>
             <p class="pain-solution__step-text">
               AIが応募獲得を担うから、採用単価を抑えつつ採用のスピードも向上させることができます。
             </p>

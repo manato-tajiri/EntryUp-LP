@@ -569,62 +569,119 @@ body.is-menu-open {
   color: var(--color-dark);
 }
 
-.pain-solution__comparison {
+.cost-compare {
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 36px);
+  align-items: stretch;
+}
+
+.cost-compare__card {
+  position: relative;
+  padding: clamp(24px, 4vw, 32px);
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(31, 85, 222, 0.12);
+  box-shadow: 0 20px 48px rgba(31, 85, 222, 0.08);
   display: grid;
   gap: 16px;
-  margin: 12px 0;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.pain-solution__comparison-item {
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  padding: 20px 22px;
-  display: grid;
-  gap: 8px;
-  border: 1px solid rgba(31, 85, 222, 0.12);
-  box-shadow: 0 18px 42px rgba(31, 85, 222, 0.06);
-}
-
-.pain-solution__comparison-item--after {
+.cost-compare__card--after {
   border-color: rgba(255, 122, 33, 0.24);
-  box-shadow: 0 18px 42px rgba(255, 122, 33, 0.18);
+  box-shadow: 0 24px 52px rgba(255, 122, 33, 0.16);
 }
 
-.pain-solution__comparison-label {
+.cost-compare__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cost-compare__tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  min-width: 112px;
   padding: 6px 12px;
   border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  background: rgba(31, 85, 222, 0.12);
   color: var(--color-primary);
-  background-color: rgba(31, 85, 222, 0.12);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.pain-solution__comparison-item--after .pain-solution__comparison-label {
+.cost-compare__tag--after {
+  background: rgba(255, 122, 33, 0.12);
   color: var(--color-cta);
-  background-color: rgba(255, 122, 33, 0.12);
-  padding: 6px 12px;
 }
 
-.pain-solution__comparison-value {
-  font-size: 22px;
+.cost-compare__title {
+  margin: 0;
+  font-size: 16px;
   font-weight: 700;
   color: var(--color-dark);
 }
 
-.pain-solution__comparison-text {
+.cost-compare__value {
   margin: 0;
-  color: var(--color-muted);
-  line-height: 1.6;
+  font-size: clamp(26px, 4.2vw, 34px);
+  font-weight: 800;
+  color: var(--color-dark);
 }
 
+.cost-compare__value span {
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.cost-compare__list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.cost-compare__badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 122, 33, 0.9), rgba(255, 168, 104, 0.9));
+  color: #FFFFFF;
+  box-shadow: 0 26px 60px rgba(255, 122, 33, 0.32);
+  min-width: 140px;
+  align-self: center;
+  justify-self: center;
+}
+
+.cost-compare__badge-value {
+  font-size: clamp(26px, 4.4vw, 34px);
+  font-weight: 800;
+}
+
+.cost-compare__badge-label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cost-compare__caption {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--color-muted);
+}
 .companies {
   padding: 96px 0;
   background-color: #EDF4FF;
@@ -1336,10 +1393,6 @@ body.is-menu-open {
     padding: 28px 28px 28px 42px;
   }
 
-  .pain-solution__comparison {
-    grid-template-columns: 1fr;
-  }
-
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1379,6 +1432,15 @@ body.is-menu-open {
 
   .overview-highlights {
     gap: 24px;
+  }
+
+  .cost-compare {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cost-compare__badge {
+    margin: 0 auto;
   }
 
   .overview-highlight {
@@ -1453,6 +1515,14 @@ body.is-menu-open {
     width: 44px;
     height: 44px;
     border-radius: 16px;
+  }
+
+  .cost-compare__card {
+    padding: 20px;
+  }
+
+  .cost-compare__badge {
+    padding: 14px 22px;
   }
 
   .pain-solution__comparison {
