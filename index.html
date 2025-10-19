@@ -7,10 +7,65 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    style="position:absolute;width:0;height:0;overflow:hidden;"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <symbol
+        id="icon-info"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 16h.01"></path>
+        <path d="M12 8v4"></path>
+      </symbol>
+      <symbol
+        id="icon-support"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m12 2a7 7 0 0 0-7 7c0 2.6 1.3 3.8 2.4 5 1 1 1.6 1.6 1.6 3v1h6v-1c0-1.4.6-2 1.6-3 1.1-1.2 2.4-2.4 2.4-5a7 7 0 0 0-7-7Z"></path>
+        <path d="M9 18h6"></path>
+        <path d="M10 22h4"></path>
+      </symbol>
+      <symbol
+        id="icon-shield"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+        <path d="m9 12 2 2 4-4"></path>
+      </symbol>
+    </defs>
+  </svg>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="#top" aria-label="EntryUp">
-        <img src="fig/Logo.svg" alt="EntryUpロゴ" class="logo-image">
+        <img
+          src="fig/Logo.svg"
+          alt="EntryUpロゴ"
+          class="logo-image"
+          width="766"
+          height="166"
+          decoding="async"
+        >
       </a>
       <nav class="site-nav">
         <a href="#overview">概要</a>
@@ -77,8 +132,23 @@
         <div class="hero-visual">
           <figure class="hero-image">
             <div class="hero-devices">
-              <img src="fig/pc-chatbot.svg" alt="EntryUpのPCチャット画面イメージ" class="hero-device hero-device--desktop">
-              <img src="fig/mobile-chat1.svg" alt="EntryUpのスマートフォンチャット画面イメージ" class="hero-device hero-device--mobile">
+              <img
+                src="fig/pc-chatbot.svg"
+                alt="EntryUpのPCチャット画面イメージ"
+                class="hero-device hero-device--desktop"
+                width="568"
+                height="378"
+                decoding="async"
+                fetchpriority="high"
+              >
+              <img
+                src="fig/mobile-chat1.svg"
+                alt="EntryUpのスマートフォンチャット画面イメージ"
+                class="hero-device hero-device--mobile"
+                width="453"
+                height="912"
+                decoding="async"
+              >
             </div>
           </figure>
         </div>
@@ -94,10 +164,8 @@
           <article class="pain-solution__step pain-solution__step--problem">
             <div class="pain-solution__step-head">
               <span class="pain-solution__step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 16h.01"></path>
-                  <path d="M12 8v4"></path>
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <use href="#icon-info" xlink:href="#icon-info"></use>
                 </svg>
               </span>
               <h3 class="pain-solution__step-title">採用単価、高くないですか？</h3>
@@ -110,10 +178,8 @@
           <article class="pain-solution__step pain-solution__step--approach">
             <div class="pain-solution__step-head">
               <span class="pain-solution__step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m12 2a7 7 0 0 0-7 7c0 2.6 1.3 3.8 2.4 5 1 1 1.6 1.6 1.6 3v1h6v-1c0-1.4.6-2 1.6-3 1.1-1.2 2.4-2.4 2.4-5a7 7 0 0 0-7-7Z"></path>
-                  <path d="M9 18h6"></path>
-                  <path d="M10 22h4"></path>
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <use href="#icon-support" xlink:href="#icon-support"></use>
                 </svg>
               </span>
               <h3 class="pain-solution__step-title">AIチャットが応募前の意思決定を後押し</h3>
@@ -130,9 +196,8 @@
           <article class="pain-solution__step pain-solution__step--result">
             <div class="pain-solution__step-head">
               <span class="pain-solution__step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-                  <path d="m9 12 2 2 4-4"></path>
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <use href="#icon-shield" xlink:href="#icon-shield"></use>
                 </svg>
               </span>
               <h3 class="pain-solution__step-title" id="cost-chart-heading">EntryUpなら採用コストを約83%削減</h3>
@@ -226,7 +291,15 @@
           </div>
           <figure class="overview-visual">
             <div class="overview-visual-frame">
-              <img src="fig/pc-admin.svg" alt="EntryUpのチャットリクルーティング画面" class="illustration">
+              <img
+                src="fig/pc-admin.svg"
+                alt="EntryUpのチャットリクルーティング画面"
+                class="illustration"
+                width="2144"
+                height="1429"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
           </figure>
         </div>
